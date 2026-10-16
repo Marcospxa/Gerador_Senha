@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gerador de Senhas Seguras</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="card">
+    <h1>🔐 Gerador de Senhas Seguras</h1>
+
+    <div class="password-output">
+      <input type="text" id="passwordField" readonly aria-label="Senha gerada">
+      <button id="copyBtn" title="Copiar senha">📋</button>
+    </div>
+    <span id="copyFeedback" class="copy-feedback" aria-live="polite"></span>
+
+    <div class="strength">
+      <div class="strength-bar" id="strengthBar"></div>
+    </div>
+    <span id="strengthLabel" class="strength-label">Força: —</span>
+
+    <div class="option">
+      <label for="lengthRange">Tamanho: <span id="lengthValue">16</span></label>
+      <input type="range" id="lengthRange" min="8" max="32" value="16">
+    </div>
+
+    <div class="toggles">
+      <label><input type="checkbox" id="uppercase" checked> Maiúsculas (A-Z)</label>
+      <label><input type="checkbox" id="lowercase" checked> Minúsculas (a-z)</label>
+      <label><input type="checkbox" id="numbers" checked> Números (0-9)</label>
+      <label><input type="checkbox" id="symbols"> Símbolos (!@#$...)</label>
+    </div>
+
+    <button id="generateBtn" class="generate-btn">🔄 Gerar senha</button>
+
+    <section class="history">
+      <h2>Histórico (últimas 5)</h2>
+      <ul id="historyList"></ul>
+      <button id="clearHistoryBtn" class="clear-btn">Limpar histórico</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
